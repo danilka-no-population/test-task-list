@@ -41,97 +41,6 @@
   transform-origin: center;
 }
 
-.app-header {
-  flex-shrink: 0;
-  padding: 34px 38px 0;
-}
-
-.app-header__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  min-width: 0;
-}
-
-.brand__mark {
-  display: grid;
-  flex: none;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 13px;
-  background: linear-gradient(145deg, #7f70f8 0%, #5c4edb 100%);
-  color: #ffffff;
-  box-shadow:
-    0 10px 22px -10px rgba(91, 78, 224, 0.72),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
-}
-
-.brand__mark svg {
-  width: 21px;
-  height: 21px;
-}
-
-.brand__name {
-  overflow: hidden;
-  color: var(--color-text);
-  font-size: 0.94rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.progress-pill {
-  display: inline-flex;
-  flex: none;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 12px;
-  border: 1px solid rgba(102, 89, 232, 0.1);
-  border-radius: 999px;
-  background-color: rgba(241, 239, 255, 0.82);
-  font-size: 0.75rem;
-  white-space: nowrap;
-}
-
-.progress-pill__label {
-  color: var(--color-text-muted);
-  font-weight: 500;
-}
-
-.progress-pill__value {
-  color: var(--color-accent-strong);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-}
-
-.app-header h1 {
-  margin-top: 30px;
-  color: var(--color-text);
-  font-size: clamp(2.1rem, 5.2vw, 2.75rem);
-  font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 1.06;
-  text-wrap: balance;
-}
-
-.app-header__subtitle {
-  max-width: 460px;
-  margin-top: 12px;
-  color: var(--color-text-muted);
-  font-size: 0.94rem;
-  line-height: 1.65;
-  text-wrap: pretty;
-}
-
 .app-content {
   display: flex;
   flex: 1;
@@ -140,226 +49,16 @@
   padding: 28px 38px 26px;
 }
 
-.task-composer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px;
-  border: 1px solid var(--color-border);
-  border-radius: 20px;
-  background-color: #f7f7fb;
-  transition:
-    border-color 200ms var(--ease-out),
-    background-color 200ms var(--ease-out),
-    box-shadow 200ms var(--ease-out);
-}
-
-.task-composer:focus-within {
-  border-color: rgba(102, 89, 232, 0.34);
-  background-color: #ffffff;
-  box-shadow: 0 0 0 4px var(--color-accent-ring);
-}
-
-.task-composer__input {
-  flex: 1;
-  min-width: 0;
-  height: 48px;
-  padding: 0 12px;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: var(--color-text);
-  font-size: 0.94rem;
-}
-
-.task-composer__input::placeholder {
-  color: var(--color-text-subtle);
-  opacity: 1;
-}
-
-.task-composer__input:focus-visible {
-  outline: none;
-}
-
-.task-composer__button {
-  display: inline-flex;
-  flex: none;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 48px;
-  padding: 0 20px;
-  border: 0;
-  border-radius: 15px;
-  background: linear-gradient(145deg, #7a6af5 0%, #5b4ddb 100%);
-  box-shadow:
-    0 10px 22px -12px rgba(83, 68, 203, 0.8),
-    inset 0 1px 0 rgba(255, 255, 255, 0.24);
-  color: #ffffff;
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  transition:
-    transform 180ms var(--ease-out),
-    box-shadow 180ms var(--ease-out);
-}
-
-.task-composer__button svg {
-  width: 18px;
-  height: 18px;
-}
-
-.task-composer__button:active {
-  transform: translateY(0) scale(0.985);
-}
-
-.task-composer__button:focus-visible {
-  outline-offset: 2px;
-}
-
-@media (hover: hover) {
-  .task-composer__button:hover {
-    box-shadow:
-      0 14px 26px -12px rgba(83, 68, 203, 0.85),
-      inset 0 1px 0 rgba(255, 255, 255, 0.24);
-    transform: translateY(-1px);
-  }
-}
-
-.filters {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 4px;
-  margin-top: 20px;
-  padding: 4px;
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  background-color: #f5f5fa;
-}
-
-.filter-button {
-  min-width: 0;
-  min-height: 42px;
-  padding: 0 8px;
-  border: 0;
-  border-radius: 12px;
-  background-color: transparent;
-  color: var(--color-text-muted);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  transition:
-    color 160ms var(--ease-out),
-    background-color 160ms var(--ease-out),
-    box-shadow 160ms var(--ease-out);
-}
-
-.filter-button[aria-pressed='true'] {
-  background-color: #ffffff;
-  box-shadow:
-    0 4px 12px -6px rgba(36, 32, 69, 0.18),
-    0 1px 2px rgba(36, 32, 69, 0.05);
-  color: var(--color-accent-strong);
-}
-
-.filter-button:focus-visible {
-  outline-offset: 1px;
-}
-
-@media (hover: hover) {
-  .filter-button:not([aria-pressed='true']):hover {
-    background-color: rgba(255, 255, 255, 0.55);
-    color: var(--color-text);
-  }
-}
-
 .task-area {
-  display: flex;
+  display: grid;
   flex: 1;
-  flex-direction: column;
+  grid-template-columns: minmax(0, 1fr);
   min-height: 228px;
   margin-top: 20px;
 }
 
-.empty-state {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 16px 16px;
-  text-align: center;
-}
-
-.empty-state__art {
-  width: 92px;
-  height: 92px;
-  margin-bottom: 17px;
-}
-
-.empty-state__title {
-  color: var(--color-text);
-  font-size: 1.02rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.35;
-}
-
-.empty-state__text {
-  max-width: 310px;
-  margin-top: 8px;
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
-  line-height: 1.65;
-}
-
-.app-footer {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 18px 38px 20px;
-  border-top: 1px solid var(--color-border);
-  background-color: rgba(249, 249, 252, 0.64);
-  color: var(--color-text-muted);
-  font-size: 0.78rem;
-}
-
-.footer-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--color-text);
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.footer-status::before {
-  content: '';
-  flex: none;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--color-accent);
-  box-shadow: 0 0 0 3px var(--color-accent-soft);
-  transform: translateY(0.5px);
-}
-
-.footer-note {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  white-space: nowrap;
-}
-
-.footer-note svg {
-  flex: none;
-  width: 14px;
-  height: 14px;
-  color: var(--color-text-subtle);
-  transform: translateY(0.5px);
+.task-area > * {
+  grid-area: 1 / 1;
 }
 
 @media (max-width: 640px) {
@@ -373,95 +72,13 @@
     border-radius: 24px;
   }
 
-  .app-header {
-    padding: 26px 22px 0;
-  }
-
-  .app-header h1 {
-    margin-top: 26px;
-    font-size: clamp(1.95rem, 8vw, 2.25rem);
-  }
-
-  .app-header__subtitle {
-    margin-top: 10px;
-    font-size: 0.875rem;
-    line-height: 1.6;
-  }
-
   .app-content {
     padding: 24px 22px 22px;
-  }
-
-  .task-composer {
-    padding: 5px;
-    border-radius: 18px;
-  }
-
-  .task-composer__input {
-    height: 46px;
-    padding: 0 10px;
-  }
-
-  .task-composer__button {
-    height: 46px;
-    padding: 0 17px;
-    border-radius: 14px;
-  }
-
-  .filter-button {
-    min-height: 40px;
-    padding: 0 4px;
-    font-size: 0.78rem;
   }
 
   .task-area {
     min-height: 214px;
     margin-top: 18px;
-  }
-
-  .empty-state__art {
-    width: 82px;
-    height: 82px;
-    margin-bottom: 15px;
-  }
-
-  .empty-state {
-    padding: 18px 10px 14px;
-  }
-
-  .app-footer {
-    gap: 10px;
-    padding: 16px 22px 18px;
-    font-size: 0.74rem;
-  }
-}
-
-@media (max-width: 460px) {
-  .task-composer__button {
-    width: 48px;
-    padding: 0;
-  }
-
-  .task-composer__button-label {
-    display: none;
-  }
-
-  .brand__name {
-    font-size: 0.875rem;
-  }
-
-  .progress-pill {
-    gap: 5px;
-    padding: 7px 10px;
-    font-size: 0.7rem;
-  }
-
-  .app-header h1 {
-    font-size: clamp(1.82rem, 9vw, 2.1rem);
-  }
-
-  .app-footer {
-    flex-wrap: wrap;
   }
 }
 
@@ -476,26 +93,8 @@
     border-radius: 22px;
   }
 
-  .app-header {
-    padding: 22px 18px 0;
-  }
-
   .app-content {
     padding: 22px 18px 20px;
-  }
-
-  .app-footer {
-    padding: 14px 18px 16px;
-  }
-
-  .brand__mark {
-    width: 36px;
-    height: 36px;
-    border-radius: 12px;
-  }
-
-  .filter-button {
-    font-size: 0.72rem;
   }
 }
 
@@ -504,42 +103,14 @@
     --app-pad-y: clamp(12px, 2.6svh, 22px);
   }
 
-  .app-header {
-    padding-top: 26px;
-  }
-
-  .app-header h1 {
-    margin-top: 22px;
-    font-size: clamp(1.95rem, min(5.2vw, 5.4svh), 2.5rem);
-  }
-
-  .app-header__subtitle {
-    margin-top: 10px;
-  }
-
   .app-content {
     padding-top: 22px;
     padding-bottom: 20px;
   }
 
-  .filters {
-    margin-top: 16px;
-  }
-
   .task-area {
     min-height: 186px;
     margin-top: 16px;
-  }
-
-  .empty-state__art {
-    width: 78px;
-    height: 78px;
-    margin-bottom: 14px;
-  }
-
-  .app-footer {
-    padding-top: 15px;
-    padding-bottom: 16px;
   }
 }
 
@@ -548,70 +119,14 @@
     --app-pad-y: 10px;
   }
 
-  .app-header {
-    padding-top: 20px;
-  }
-
-  .app-header h1 {
-    margin-top: 16px;
-    font-size: clamp(1.75rem, min(5vw, 5.5svh), 2.2rem);
-  }
-
-  .app-header__subtitle {
-    margin-top: 8px;
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-
   .app-content {
     padding-top: 16px;
     padding-bottom: 16px;
   }
 
-  .task-composer {
-    padding: 5px;
-  }
-
-  .task-composer__input,
-  .task-composer__button {
-    height: 44px;
-  }
-
-  .filters {
-    margin-top: 14px;
-  }
-
-  .filter-button {
-    min-height: 38px;
-  }
-
   .task-area {
     min-height: 156px;
     margin-top: 12px;
-  }
-
-  .empty-state {
-    padding: 12px 10px 10px;
-  }
-
-  .empty-state__art {
-    width: 68px;
-    height: 68px;
-    margin-bottom: 10px;
-  }
-
-  .empty-state__title {
-    font-size: 0.96rem;
-  }
-
-  .empty-state__text {
-    margin-top: 6px;
-    font-size: 0.82rem;
-    line-height: 1.5;
-  }
-
-  .app-footer {
-    padding: 12px 22px 14px;
   }
 }
 
@@ -620,65 +135,14 @@
     --app-pad-y: 8px;
   }
 
-  .app-header {
-    padding-top: 16px;
-  }
-
-  .app-header h1 {
-    margin-top: 12px;
-    font-size: clamp(1.55rem, min(5vw, 5.2svh), 1.95rem);
-  }
-
-  .app-header__subtitle {
-    display: none;
-  }
-
   .app-content {
     padding-top: 14px;
     padding-bottom: 14px;
   }
 
-  .task-composer {
-    padding: 4px;
-  }
-
-  .task-composer__input,
-  .task-composer__button {
-    height: 42px;
-  }
-
-  .filters {
-    margin-top: 10px;
-  }
-
   .task-area {
     min-height: 120px;
     margin-top: 10px;
-  }
-
-  .empty-state {
-    padding: 8px 8px 6px;
-  }
-
-  .empty-state__art {
-    width: 56px;
-    height: 56px;
-    margin-bottom: 8px;
-  }
-
-  .empty-state__title {
-    font-size: 0.92rem;
-  }
-
-  .empty-state__text {
-    margin-top: 5px;
-    font-size: 0.76rem;
-    line-height: 1.45;
-  }
-
-  .app-footer {
-    padding: 10px 18px 11px;
-    font-size: 0.7rem;
   }
 }
 
@@ -687,84 +151,14 @@
     --app-pad-y: 6px;
   }
 
-  .app-header {
-    padding-top: 12px;
-  }
-
-  .app-header__top {
-    gap: 10px;
-  }
-
-  .brand__mark {
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
-  }
-
-  .brand__mark svg {
-    width: 17px;
-    height: 17px;
-  }
-
-  .brand__name {
-    font-size: 0.8rem;
-  }
-
-  .progress-pill {
-    gap: 5px;
-    padding: 6px 9px;
-    font-size: 0.65rem;
-  }
-
-  .app-header h1 {
-    margin-top: 8px;
-    font-size: clamp(1.4rem, min(4.8vw, 5svh), 1.75rem);
-  }
-
   .app-content {
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
-  .task-composer__input,
-  .task-composer__button {
-    height: 38px;
-  }
-
-  .filters {
-    margin-top: 8px;
-  }
-
-  .filter-button {
-    min-height: 34px;
-  }
-
   .task-area {
     min-height: 86px;
     margin-top: 8px;
-  }
-
-  .empty-state {
-    padding: 4px 8px;
-  }
-
-  .empty-state__art {
-    width: 42px;
-    height: 42px;
-    margin-bottom: 6px;
-  }
-
-  .empty-state__title {
-    font-size: 0.85rem;
-  }
-
-  .empty-state__text {
-    display: none;
-  }
-
-  .app-footer {
-    padding: 8px 16px 9px;
-    font-size: 0.68rem;
   }
 }
 
@@ -773,36 +167,8 @@
     --app-pad-y: 4px;
   }
 
-  .app-header h1 {
-    margin-top: 4px;
-  }
-
   .app-content {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-
-  .empty-state {
-    padding: 2px 8px;
-  }
-
-  .empty-state__art {
-    display: none;
-  }
-
-  .app-footer {
-    padding-top: 4px;
-    padding-bottom: 5px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
   }
 }

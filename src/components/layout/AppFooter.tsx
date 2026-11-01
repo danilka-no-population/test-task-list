@@ -1,3 +1,4 @@
+import './AppFooter.css'
 import { LockIcon } from '../ui/icons'
 
 export type AppFooterProps = {

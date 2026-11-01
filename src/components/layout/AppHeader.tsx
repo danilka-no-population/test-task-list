@@ -1,3 +1,4 @@
+import './AppHeader.css'
 import { CheckIcon } from '../ui/icons'
 
 export type AppHeaderProps = {

@@ -1,18 +1,24 @@
 import { useId } from 'react'
+import './EmptyState.css'
 
 export type EmptyStateProps = {
   title?: string
   description?: string
+  isHidden?: boolean
 }
 
 export function EmptyState({
   title = 'Пока здесь пусто',
   description = 'Добавьте первую задачу — и начните с одного небольшого шага.',
+  isHidden = false,
 }: EmptyStateProps) {
   const gradientId = useId().replace(/:/g, '')
 
   return (
-    <div className="empty-state">
+    <div
+      className={`empty-state${isHidden ? ' empty-state--hidden' : ''}`}
+      aria-hidden={isHidden || undefined}
+    >
       <svg
         className="empty-state__art"
         viewBox="0 0 96 96"

@@ -1,3 +1,4 @@
+import './FilterTabs.css'
 import type { Filter } from '../../types'
 
 const FILTER_OPTIONS: readonly { value: Filter; label: string }[] = [

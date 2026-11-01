@@ -1,0 +1,93 @@
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: 20px;
+  padding: 4px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background-color: #f5f5fa;
+}
+
+.filter-button {
+  min-width: 0;
+  min-height: 42px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 12px;
+  background-color: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition:
+    color 160ms var(--ease-out),
+    background-color 160ms var(--ease-out),
+    box-shadow 160ms var(--ease-out);
+}
+
+.filter-button[aria-pressed='true'] {
+  background-color: #ffffff;
+  box-shadow:
+    0 4px 12px -6px rgba(36, 32, 69, 0.18),
+    0 1px 2px rgba(36, 32, 69, 0.05);
+  color: var(--color-accent-strong);
+}
+
+.filter-button:focus-visible {
+  outline-offset: 1px;
+}
+
+@media (hover: hover) {
+  .filter-button:not([aria-pressed='true']):hover {
+    background-color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text);
+  }
+}
+
+@media (max-width: 640px) {
+  .filter-button {
+    min-height: 40px;
+    padding: 0 4px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .filter-button {
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-height: 780px) {
+  .filters {
+    margin-top: 16px;
+  }
+}
+
+@media (max-height: 700px) {
+  .filters {
+    margin-top: 14px;
+  }
+
+  .filter-button {
+    min-height: 38px;
+  }
+}
+
+@media (max-height: 600px) {
+  .filters {
+    margin-top: 10px;
+  }
+}
+
+@media (max-height: 500px) {
+  .filters {
+    margin-top: 8px;
+  }
+
+  .filter-button {
+    min-height: 34px;
+  }
+}
