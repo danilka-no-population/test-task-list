@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import './EmptyState.css'
+import '../../styles/task/EmptyState.css'
 
 export type EmptyStateProps = {
   title?: string

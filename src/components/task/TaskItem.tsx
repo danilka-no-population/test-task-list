@@ -1,4 +1,4 @@
-import './TaskItem.css'
+import '../../styles/task/TaskItem.css'
 import type { Task } from '../../types'
 import { CheckIcon, TrashIcon } from '../ui/icons'
 

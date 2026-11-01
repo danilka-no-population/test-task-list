@@ -1,4 +1,4 @@
-import './TaskList.css'
+import '../../styles/task/TaskList.css'
 import type { Task } from '../../types'
 import { TaskItem } from './TaskItem'
 

@@ -1,6 +1,6 @@
 import { useId, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
-import './TaskComposer.css'
+import '../../styles/task/TaskComposer.css'
 import { PlusIcon } from '../ui/icons'
 
 export type TaskComposerProps = {

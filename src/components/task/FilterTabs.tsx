@@ -1,4 +1,4 @@
-import './FilterTabs.css'
+import '../../styles/task/FilterTabs.css'
 import type { Filter } from '../../types'
 
 const FILTER_OPTIONS: readonly { value: Filter; label: string }[] = [
@@ -9,7 +9,7 @@ const FILTER_OPTIONS: readonly { value: Filter; label: string }[] = [
 
 export type FilterTabsProps = {
   activeFilter: Filter
-  onChange?: (filter: Filter) => void
+  onChange: (filter: Filter) => void
 }
 
 export function FilterTabs({ activeFilter, onChange }: FilterTabsProps) {
@@ -21,7 +21,7 @@ export function FilterTabs({ activeFilter, onChange }: FilterTabsProps) {
           className="filter-button"
           type="button"
           aria-pressed={activeFilter === option.value}
-          onClick={() => onChange?.(option.value)}
+          onClick={() => onChange(option.value)}
         >
           {option.label}
         </button>
