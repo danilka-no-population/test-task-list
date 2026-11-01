@@ -29,6 +29,13 @@ export function AppHeader({ completed, total }: AppHeaderProps) {
       <p className="app-header__subtitle">
         Соберите дела в одном месте и отмечайте то, что уже сделано.
       </p>
+
+      <p className="app-header__hint">
+        <span className="app-header__hint-icon" aria-hidden="true">
+          <CheckIcon />
+        </span>
+        <span>Нажмите на задачу, чтобы отметить её как выполненную</span>
+      </p>
     </header>
   )
 }

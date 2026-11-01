@@ -50,3 +50,25 @@ export function LockIcon(props: IconProps) {
     </svg>
   )
 }
+
+export function TrashIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M6.5 7.5h11l-.6 10.65a2 2 0 0 1-2 1.85H9.1a2 2 0 0 1-2-1.85L6.5 7.5Z"
+        fill="currentColor"
+        fillOpacity="0.12"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5 7.5h14M9.5 7.5V5.6c0-.61.49-1.1 1.1-1.1h2.8c.61 0 1.1.49 1.1 1.1v1.9"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}

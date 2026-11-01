@@ -23,6 +23,20 @@ function App() {
     setTasks((currentTasks) => [...currentTasks, task])
   }
 
+  const handleToggleTask = (id: string) => {
+    setTasks((currentTasks) =>
+      currentTasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task,
+      ),
+    )
+  }
+
+  const handleDeleteTask = (id: string) => {
+    setTasks((currentTasks) =>
+      currentTasks.filter((task) => task.id !== id),
+    )
+  }
+
   return (
     <main className="app">
       <section className="task-card" aria-labelledby="app-title">
@@ -34,7 +48,13 @@ function App() {
 
           <section className="task-area" aria-label="Список задач">
             <EmptyState isHidden={tasks.length > 0} />
-            {tasks.length > 0 && <TaskList tasks={tasks} />}
+            {tasks.length > 0 && (
+              <TaskList
+                tasks={tasks}
+                onToggle={handleToggleTask}
+                onDelete={handleDeleteTask}
+              />
+            )}
           </section>
         </div>
 

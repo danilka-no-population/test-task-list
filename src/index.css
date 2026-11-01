@@ -17,6 +17,9 @@
   --color-accent-strong: #5445d2;
   --color-accent-soft: #f1efff;
   --color-accent-ring: rgba(102, 89, 232, 0.14);
+  --color-success: #2b9271;
+  --color-success-soft: #eef8f4;
+  --color-success-border: rgba(43, 146, 113, 0.2);
   --color-danger: #d95362;
 
   --shadow-card:

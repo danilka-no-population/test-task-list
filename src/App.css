@@ -98,7 +98,7 @@
   }
 }
 
-@media (max-height: 780px) {
+@media (max-height: 800px) {
   .app {
     --app-pad-y: clamp(12px, 2.6svh, 22px);
   }
