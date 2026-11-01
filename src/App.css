@@ -338,11 +338,13 @@
 
 .footer-status::before {
   content: '';
+  flex: none;
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background-color: var(--color-accent);
   box-shadow: 0 0 0 3px var(--color-accent-soft);
+  transform: translateY(0.5px);
 }
 
 .footer-note {
@@ -353,9 +355,11 @@
 }
 
 .footer-note svg {
+  flex: none;
   width: 14px;
   height: 14px;
   color: var(--color-text-subtle);
+  transform: translateY(0.5px);
 }
 
 @media (max-width: 640px) {
