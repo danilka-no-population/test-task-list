@@ -8,7 +8,9 @@ export type AppFooterProps = {
 export function AppFooter({ remaining }: AppFooterProps) {
   return (
     <footer className="app-footer">
-      <span className="footer-status">Осталось: {remaining}</span>
+      <span className="footer-status" role="status">
+        Осталось: {remaining}
+      </span>
       <span className="footer-note">
         <LockIcon />
         <span>Сохраняется в браузере</span>

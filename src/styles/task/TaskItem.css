@@ -1,3 +1,15 @@
+@keyframes task-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .task-item {
   display: flex;
   align-items: center;
@@ -7,14 +19,23 @@
   border: 1px solid var(--color-border);
   border-radius: 16px;
   background-color: rgba(251, 251, 254, 0.9);
+  animation: task-enter 220ms var(--ease-out);
   transition:
     background-color 180ms var(--ease-out),
-    border-color 180ms var(--ease-out);
+    border-color 180ms var(--ease-out),
+    opacity 150ms var(--ease-out),
+    transform 150ms var(--ease-out);
 }
 
 .task-item--completed {
   border-color: var(--color-success-border);
   background-color: var(--color-success-soft);
+}
+
+.task-item--removing {
+  opacity: 0;
+  transform: translateX(10px) scale(0.985);
+  pointer-events: none;
 }
 
 .task-item__toggle {
