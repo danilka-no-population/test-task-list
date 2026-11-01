@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { AppFooter } from './components/layout/AppFooter'
 import { AppHeader } from './components/layout/AppHeader'
@@ -6,6 +6,7 @@ import { EmptyState } from './components/task/EmptyState'
 import { FilterTabs } from './components/task/FilterTabs'
 import { TaskComposer } from './components/task/TaskComposer'
 import { TaskList } from './components/task/TaskList'
+import { loadTasks, saveTasks } from './lib/taskStorage'
 import type { Filter, Task } from './types'
 
 const EMPTY_STATE_DEFAULT = {
@@ -24,7 +25,7 @@ const EMPTY_STATE_COMPLETED = {
 }
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([])
+  const [tasks, setTasks] = useState<Task[]>(loadTasks)
   const [filter, setFilter] = useState<Filter>('all')
   const completedCount = tasks.filter((task) => task.completed).length
   const remainingCount = tasks.length - completedCount
@@ -47,6 +48,10 @@ function App() {
         : filter === 'completed'
           ? EMPTY_STATE_COMPLETED
           : EMPTY_STATE_DEFAULT
+
+  useEffect(() => {
+    saveTasks(tasks)
+  }, [tasks])
 
   const handleAddTask = (title: string) => {
     const task: Task = {
