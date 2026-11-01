@@ -38,6 +38,7 @@ export function TaskItem({ task, onToggle, onDelete }: TaskItemProps) {
         type="button"
         aria-pressed={task.completed}
         onClick={handleToggle}
+        title={task.title}
       >
         <span className="task-item__marker" aria-hidden="true">
           <CheckIcon />

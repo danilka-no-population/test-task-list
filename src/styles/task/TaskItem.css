@@ -15,6 +15,7 @@
   align-items: center;
   gap: 8px;
   min-width: 0;
+  height: var(--task-row-height, 62px);
   padding: 10px 10px 10px 16px;
   border: 1px solid var(--color-border);
   border-radius: 16px;
@@ -34,7 +35,7 @@
 
 .task-item--removing {
   opacity: 0;
-  transform: translateX(10px) scale(0.985);
+  transform: translateY(5px) scale(0.985);
   pointer-events: none;
 }
 
@@ -94,11 +95,13 @@
 .task-item__title {
   flex: 1;
   min-width: 0;
+  overflow: hidden;
   color: var(--color-text);
   font-size: 0.94rem;
   font-weight: 500;
   line-height: 1.45;
-  overflow-wrap: anywhere;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   transition: color 180ms var(--ease-out);
 }
 

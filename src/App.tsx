@@ -6,6 +6,7 @@ import { EmptyState } from './components/task/EmptyState'
 import { FilterTabs } from './components/task/FilterTabs'
 import { TaskComposer } from './components/task/TaskComposer'
 import { TaskList } from './components/task/TaskList'
+import { loadFilter, saveFilter } from './lib/filterStorage'
 import { loadTasks, saveTasks } from './lib/taskStorage'
 import type { Filter, Task } from './types'
 
@@ -26,7 +27,7 @@ const EMPTY_STATE_COMPLETED = {
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>(loadTasks)
-  const [filter, setFilter] = useState<Filter>('all')
+  const [filter, setFilter] = useState<Filter>(loadFilter)
   const completedCount = tasks.filter((task) => task.completed).length
   const remainingCount = tasks.length - completedCount
   const filteredTasks = tasks.filter((task) => {
@@ -53,6 +54,10 @@ function App() {
     saveTasks(tasks)
   }, [tasks])
 
+  useEffect(() => {
+    saveFilter(filter)
+  }, [filter])
+
   const handleAddTask = (title: string) => {
     const task: Task = {
       id: crypto.randomUUID(),
@@ -60,7 +65,7 @@ function App() {
       completed: false,
     }
 
-    setTasks((currentTasks) => [...currentTasks, task])
+    setTasks((currentTasks) => [task, ...currentTasks])
   }
 
   const handleToggleTask = (id: string) => {
@@ -87,24 +92,17 @@ function App() {
           <FilterTabs activeFilter={filter} onChange={setFilter} />
 
           <section className="task-area" aria-label="Список задач">
-            {tasks.length === 0 ? (
-              <EmptyState />
+            {filteredTasks.length > 0 ? (
+              <TaskList
+                tasks={filteredTasks}
+                onToggle={handleToggleTask}
+                onDelete={handleDeleteTask}
+              />
             ) : (
-              <>
-                <EmptyState isHidden />
-                {filteredTasks.length > 0 ? (
-                  <TaskList
-                    tasks={filteredTasks}
-                    onToggle={handleToggleTask}
-                    onDelete={handleDeleteTask}
-                  />
-                ) : (
-                  <EmptyState
-                    title={emptyStateContent.title}
-                    description={emptyStateContent.description}
-                  />
-                )}
-              </>
+              <EmptyState
+                title={emptyStateContent.title}
+                description={emptyStateContent.description}
+              />
             )}
           </section>
         </div>
